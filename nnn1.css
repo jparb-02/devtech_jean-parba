@@ -1,0 +1,7 @@
+.simple-box {
+    width: 300px;
+    height: 300px;
+    background-color: lightgreen;
+    border-radius: 10% 30%;
+    border: 5px solid #ff4500; /* OrangeRed */
+}
