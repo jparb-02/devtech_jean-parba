@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flower Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+
+    .flower {
+       position: relative;
+      width: 150px;
+      height: 150px;
+      transform: rotate(45deg);
+      animation: spin 5s linear infinite;
+    }
+
+    .petal {
+      position: absolute;
+      width: 50px;
+      height: 150px;
+      background: #ff69b4;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      animation: petalAnimation 5s infinite ease-in-out;
+      
+    }
+
+    .petal:nth-child(1) { transform: rotate(10deg); animation-delay: 0s; }
+    .petal:nth-child(2) { transform: rotate(90deg); animation-delay: 0.5s; }
+    .petal:nth-child(3) { transform: rotate(180deg); animation-delay: 1s; }
+    .petal:nth-child(4) { transform: rotate(270deg); animation-delay: 1.5s; }
+
+    @keyframes petalAnimation {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.2) rotate(10deg); }
+
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(45deg); }
+      100% { transform: rotate(405deg); }
+
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background: yellow;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="flower">
+    <div class="petal"></div>   <!-- First Petal -->
+    <div class="petal"></div>   <!-- Second Petal -->
+    <div class="petal"></div>   <!-- Third Petal-->
+    <div class="petal"></div>   <!-- Fourth Petal-->
+    <div class="center"></div>
+  </div>
+
+
+</body>
+</html>
